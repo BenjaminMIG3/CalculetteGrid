@@ -1,0 +1,60 @@
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.bod{
+    width: 250px;
+    display: grid;
+    border: 10px solid #5356C7;
+}
+
+
+.resultat{
+    background-color: #151433;
+    color: white;
+    height: 70px;
+    justify-content: right;
+    display: grid;
+}
+
+.Res{
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.sousRes{
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.reset{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.AC , .DEL {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background-color: #D4D3F1;
+    border: 1px solid white;
+}
+
+.nombre{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+    background-color: #D4D3F1;
+}
+
+.nbr {
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+}
