@@ -2,6 +2,8 @@
 body{
     display: flex;
     justify-content: center;
+    margin-top: 20%;
+    scale: 170%;
 }
 
 .bod{
@@ -9,7 +11,6 @@ body{
     display: grid;
     border: 10px solid #5356C7;
 }
-
 
 .resultat{
     background-color: #151433;
@@ -19,42 +20,55 @@ body{
     display: grid;
 }
 
-.Res{
+#res{
     font-size: 25px;
     margin-right: 10px;
 }
 
-.sousRes{
+#sousRes{
     font-size: 15px;
     margin-top: 10px;
 }
 
 .reset{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
     grid-template-rows: 1fr;
 }
 
-.AC , .DEL {
+#AC , #DEL {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60px;
     background-color: #D4D3F1;
     border: 1px solid white;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 
+.digits{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
 .nombre{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(4,1fr);
-    background-color: #D4D3F1;
 }
 
-.nbr {
+#nbr0 , #nbr1 , #nbr2 , #nbr3 , #nbr4 , #nbr5 , #nbr6 , #nbr7 , #nbr8 , #nbr9, #nbrFois , #nbrDivise , #nbrPlus , #nbrMoins , #nbrEgal , #nbrPoint{
     display: flex;
     height: 40px;
     justify-content: center;
     align-items: center;
     border: 1px solid white;
+    cursor: pointer;
+    background-color: #D4D3F1;
+}
+
+.operateurs{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4,1fr);
 }
