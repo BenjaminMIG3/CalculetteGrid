@@ -1,6 +1,6 @@
 
 body{
-    display: flex;
+    display: grid;
     justify-content: center;
     margin-top: 20%;
     scale: 170%;
@@ -10,6 +10,7 @@ body{
     width: 250px;
     display: grid;
     border: 10px solid #5356C7;
+    max-width: 250px;
 }
 
 .resultat{
@@ -18,16 +19,19 @@ body{
     height: 70px;
     justify-content: right;
     display: grid;
+    max-width: 250px;
 }
 
 #res{
     font-size: 25px;
     margin-right: 10px;
+    max-width: 240px;
 }
 
 #sousRes{
     font-size: 15px;
     margin-top: 10px;
+    max-width: 250px;
 }
 
 .reset{

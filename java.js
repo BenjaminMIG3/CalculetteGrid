@@ -1,158 +1,93 @@
 let a = 0;
+let b = 0;
+let operator = "";
 let res = 0;
 let sousRes = 0;
 
+updateDisplay(0);
 
-const AC = document.getElementById("AC");
-
-AC.addEventListener("click", function() {
-    console.log("AC");
-  });
-
-
-const del = document.getElementById("DEL");
-
-del.addEventListener("click", function() {
-    a = 0;
-    console.log("DEL");
-});
-
-
-const zero = document.getElementById("nbr0");
-
-zero.addEventListener("click", function() {
-    a = 0;
-    document.getElementById("res").innerHTML = a;
-    a = res;
-});
-
-const un = document.getElementById("nbr1");
-
-un.addEventListener("click", function() {
-    a = 1;
-    document.getElementById("res").innerHTML = a;
-  });
-
-const deux = document.getElementById("nbr2");
-
-deux.addEventListener("click", function() {
-    a = 2;
-    document.getElementById("res").innerHTML = a;
-    a = res;
-});
-
-const trois = document.getElementById("nbr3");
-
-trois.addEventListener("click", function() {
-    a = 3;
-    document.getElementById("res").innerHTML = a;
-    a = res;
-    });
-
-const quatre = document.getElementById("nbr4");
-
-quatre.addEventListener("click", function() {
-    a = 4;
-    document.getElementById("res").innerHTML = a;
-    a = res;
-});
-
-const cinq = document.getElementById("nbr5");
-
-cinq.addEventListener("click", function() {
-    a = 5;
-    document.getElementById("res").innerHTML = a;
-    a = res;
-    });
-
-const six = document.getElementById("nbr6");
-
-six.addEventListener("click", function() {
-    a = 6;
-    document.getElementById("res").innerHTML = a;
-    a = res;
-    });
-
-const sept = document.getElementById("nbr7");
-
-sept.addEventListener("click", function() {
-    a = 7;
-    document.getElementById("res").innerHTML = a;
-    a = res;
-    });
-
-const huit = document.getElementById("nbr8");
-
-huit.addEventListener("click", function() {
-    a = 8;
-    document.getElementById("res").innerHTML = a;
-    a = res;
-    });
-
-const neuf = document.getElementById("nbr9");
-
-neuf.addEventListener("click", function() {
-    a = 9;
-    document.getElementById("res").innerHTML = a;
-    a = res;
-    });
-
-
-const divise = document.getElementById("nbrDivise");
-
-divise.addEventListener("click", function() {
-    if (a != 0) {
-        console.log(res); 
-        res = res / a;
-        document.getElementById("res").innerHTML = res;
+function calculate()
+{
+    switch(operator){
+        case "+":
+            return a + b;
+        case "-":
+            return a - b;
+        case "*":
+            return a * b;
+        case "/":
+          if (b == 0) {
+            return "division par zero";
+          }
+            return a / b;
+        default:
+            reset();
+            return NaN;
     }
-    });
+}
 
-const fois = document.getElementById("nbrFois");
+function inputOp(op) {
+  operator = op;
+}
 
-fois.addEventListener("click", function() {
-    console.log("*");
-    });
-
-
-const moins = document.getElementById("nbrMoins");
-
-moins.addEventListener("click", function() {
-    console.log("-");
-    });
-
-const plus = document.getElementById("nbrPlus");
-
-plus.addEventListener("click", function() {
-    console.log("+");
-    });
-    
-const egal = document.getElementById("nbrEgal");
-
-egal.addEventListener("click", function() {
-    console.log("=");
-    });
-
-const point = document.getElementById("nbrPoint");
-
-point.addEventListener("click", function() {
-    console.log(".");
-    });
-    
-
-var sousResultat = document.getElementById("sousRes").innerHTML = sousRes;
-
-var resultat = document.getElementById("res").innerHTML = res;
-
-document.addEventListener('click',() => {
-    switch (res) {
-
-
+function input(num) {
+    if (operator === "") 
+     {
+      a = (a * 10) + num; 
+      updateDisplay(a);
+    } 
+    else 
+    {
+      b = (b * 10) + num;
+      updateDisplay(b);
     }
+  }
 
-})
+function reset() {
+  updateDisplay2(res);
+    a = 0;
+    b = 0;
+    operator = "";
+    updateDisplay(0);
+  }
 
+  function zero() {
+    if (operator === ""){
+      let numStr = a.toString();
+    numStr = numStr.substring(0, numStr.length - 1);
+    if(numStr === "")
+    {
+      numStr = 0;  
+    }
+    a = parseFloat(numStr);
+    updateDisplay(a);
+    }
+    else {
+    let numStr = b.toString();
+    numStr = numStr.substring(0, numStr.length - 1);
+    if(numStr === "")
+    {
+      numStr = 0;  
+    }
+    b = parseFloat(numStr);
+    updateDisplay(b);
+    }
+  }
 
+function equal() {
+    res = calculate();
+    updateDisplay(res);
+    sousRes = res;
+    updateDisplay2(sousRes);
+    a = res;
+    b = 0;
+    operator = "";
+  }
 
-    
-    
+function updateDisplay(value) {
+    document.getElementById("res").innerHTML = value;
+  }
+
+function updateDisplay2(value) {
+  document.getElementById("sousRes").innerHTML = value;
+}

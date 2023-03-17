@@ -9,38 +9,35 @@
     </title>
 </head>
 <body>
-    <div class="navbar">
-
-    </div>
     <div class="bod">
         <div class="resultat">
             <div id="sousRes"></div>
             <div id="res"></div>
         </div>
         <div class="reset">
-            <button id="AC">AC</button>
-            <button id="DEL">DEL</button>
+            <button onClick="reset()" id="AC">AC</button>
+            <button onClick="zero()" id="DEL">DEL</button>
         </div>
         <div class="digits">
             <div class="nombre">
-                <button id="nbr1">1</button>
-                <button id="nbr2">2</button>
-                <button id="nbr3">3</button>
-                <button id="nbr4">4</button>
-                <button id="nbr5">5</button>
-                <button id="nbr6">6</button>
-                <button id="nbr7">7</button>
-                <button id="nbr8">8</button>
-                <button id="nbr9">9</button>
-                <button id="nbrPoint">.</button>
-                <button id="nbr0">0</button>
-                <button id="nbrEgal">=</button>
+                <button onClick="input(1)" id="nbr1">1</button>
+                <button onClick="input(2)" id="nbr2">2</button>
+                <button onClick="input(3)" id="nbr3">3</button>
+                <button onClick="input(4)" id="nbr4">4</button>
+                <button onClick="input(5)" id="nbr5">5</button>
+                <button onClick="input(6)" id="nbr6">6</button>
+                <button onClick="input(7)" id="nbr7">7</button>
+                <button onClick="input(8)" id="nbr8">8</button>
+                <button onClick="input(9)" id="nbr9">9</button>
+                <button onClick="addDecimal()" id="nbrPoint">.</button>
+                <button onClick="input(0)" id="nbr0">0</button>
+                <button onClick="equal()" id="nbrEgal">=</button>
             </div>
             <div class="operateurs">
-                <button id="nbrFois">*</button>
-                <button id="nbrDivise">÷</button>
-                <button id="nbrPlus">+</button>
-                <button id="nbrMoins">-</button>
+                <button onClick="inputOp('*')" id="nbrFois">*</button>
+                <button onClick="inputOp('/')" id="nbrDivise">÷</button>
+                <button onClick="inputOp('+')" id="nbrPlus">+</button>
+                <button onClick="inputOp('-')" id="nbrMoins">-</button>
             </div>
         </div>
     </div>
