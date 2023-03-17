@@ -36,7 +36,7 @@ body{
 
 .reset{
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: repeat(2, 1fr) ;
     grid-template-rows: 1fr;
 }
 
@@ -61,7 +61,9 @@ body{
     grid-template-rows: repeat(4,1fr);
 }
 
-#nbr0 , #nbr1 , #nbr2 , #nbr3 , #nbr4 , #nbr5 , #nbr6 , #nbr7 , #nbr8 , #nbr9, #nbrFois , #nbrDivise , #nbrPlus , #nbrMoins , #nbrEgal , #nbrPoint{
+
+
+#nbr, #Fois, #Divise, #Plus, #Moins{
     display: flex;
     height: 40px;
     justify-content: center;
